@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Muhammad Bin Haseeb — Cybersecurity & Tech Portfolio" />
+    <title>Muhammad Bin Haseeb | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,400;0,600;0,800;1,300&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- Background layers -->
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+    <div class="nebula-bg" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress"><span id="scroll-bar"></span></div>
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header" id="site-header">
+      <nav class="nav container">
+        <a href="#hero" class="brand" aria-label="Home">
+          <span class="brand-bracket">[</span>MBH<span class="brand-bracket">]</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" role="list">
+          <li><a href="#hero"     class="nav-link active"><i class="fa-solid fa-house-signal"></i><span>Home</span></a></li>
+          <li><a href="#about"    class="nav-link"><i class="fa-solid fa-id-card"></i><span>About</span></a></li>
+          <li><a href="#skills"   class="nav-link"><i class="fa-solid fa-microchip"></i><span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-code-branch"></i><span>Projects</span></a></li>
+          <li><a href="#branding" class="nav-link"><i class="fa-solid fa-satellite-dish"></i><span>Branding</span></a></li>
+          <li><a href="#contact"  class="nav-link"><i class="fa-solid fa-at"></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ═══════════════════ HERO ═══════════════════ -->
+      <section id="hero" class="section hero-section">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">
+              <span class="status-dot"></span>
+              <span class="mono">01 // Personal Portfolio</span>
+            </p>
+            <h1 class="hero-name">
+              <span class="name-first">Muhammad</span>
+              <span class="name-last">Bin Haseeb</span>
+            </h1>
+            <p class="hero-tagline mono">
+              <span class="typed-text" data-strings='["Cybersecurity Learner","Web Developer","Tech Explorer","Digital Builder","CyberMak Founder"]'></span><span class="cursor-blink">_</span>
+            </p>
+            <p class="hero-intro">
+              Grade 10 student from Pakistan. Passionate about cybersecurity, ethical hacking fundamentals, and building digital systems that matter.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Get In Touch</span>
+                <span class="btn-shine"></span>
+              </a>
+              <a class="btn btn-ghost" href="https://drive.google.com/uc?export=download&id=1UrFq7XiiHoXa0ohVO_2voCQd2JNZY1n" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>Resume</span>
+              </a>
+            </div>
+
+            <!-- Quick stat badges -->
+            <div class="hero-stats">
+              <div class="stat-badge">
+                <span class="stat-num">2+</span>
+                <span class="stat-label">Yrs Learning</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">Live Projects</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-num">PKR</span>
+                <span class="stat-label">CyberMak Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Moon Canvas -->
+          <div class="hero-visual" aria-hidden="true">
+            <canvas id="moon-canvas"></canvas>
+            <div class="moon-glow"></div>
+            <div class="orbit-ring orbit-1"></div>
+            <div class="orbit-ring orbit-2"></div>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="mono">scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ ABOUT ═══════════════════ -->
+      <section id="about" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-num mono">02</span>
+            <h2><i class="fa-solid fa-id-card-clip"></i> About Me</h2>
+          </div>
+
+          <div class="about-layout">
+            <!-- Image side -->
+            <div class="about-image-wrap reveal">
+              <div class="about-image-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600&q=80&auto=format&fit=crop"
+                  alt="Space tech aesthetic"
+                  class="about-img"
+                  loading="lazy"
+                />
+                <div class="about-img-overlay"></div>
+                <div class="about-img-badge mono">// Based in Pakistan</div>
+              </div>
+              <div class="about-image-frame secondary">
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80&auto=format&fit=crop"
+                  alt="Cybersecurity concept"
+                  class="about-img"
+                  loading="lazy"
+                />
+                <div class="about-img-overlay"></div>
+              </div>
+            </div>
+
+            <!-- Cards side -->
+            <div class="about-grid">
+              <div class="about-card glass reveal" style="--d:0ms">
+                <div class="about-card-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <h3>Profile</h3>
+                <p>Grade 10 student from Pakistan with a strong interest in technology, cybersecurity, and how digital systems work behind the scenes.</p>
+              </div>
+              <div class="about-card glass reveal" style="--d:80ms">
+                <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Learning Focus</h3>
+                <p>Exploring how websites, apps, and online systems function — especially from a security perspective.</p>
+              </div>
+              <div class="about-card glass reveal" style="--d:160ms">
+                <div class="about-card-icon"><i class="fa-solid fa-wrench"></i></div>
+                <h3>How I Build</h3>
+                <ul>
+                  <li><i class="fa-solid fa-chevron-right fa-xs"></i> Experimenting with new tools</li>
+                  <li><i class="fa-solid fa-chevron-right fa-xs"></i> Learning by practice</li>
+                  <li><i class="fa-solid fa-chevron-right fa-xs"></i> Improving step by step</li>
+                </ul>
+              </div>
+              <div class="about-card glass reveal" style="--d:240ms">
+                <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Future Direction</h3>
+                <p>Growing into a strong cybersecurity and tech professional — one skill at a time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ SKILLS ═══════════════════ -->
+      <section id="skills" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-num mono">03</span>
+            <h2><i class="fa-solid fa-microchip"></i> Skills & Expertise</h2>
+          </div>
+
+          <!-- Tech visual strip -->
+          <div class="tech-strip reveal">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=70&auto=format&fit=crop" alt="Tech matrix" class="tech-strip-img" loading="lazy" />
+            <div class="tech-strip-overlay"></div>
+            <div class="tech-strip-text mono">// SECURITY · WEB · DESIGN · SYSTEMS</div>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card glass reveal tilt-card" style="--d:0ms">
+              <div class="skill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Cybersecurity</h3>
+              <p>Understanding system security, vulnerability discovery, and ethical protection methods.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+              <span class="skill-level mono">Intermediate</span>
+            </div>
+            <div class="skill-card glass reveal tilt-card" style="--d:70ms">
+              <div class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+              <h3>Graphic Design</h3>
+              <p>Creating logos, banners, and layouts that communicate visually.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:55%"></div></div>
+              <span class="skill-level mono">Beginner+</span>
+            </div>
+            <div class="skill-card glass reveal tilt-card" style="--d:140ms">
+              <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+              <h3>Web Development</h3>
+              <p>Building structured frontends with clean HTML, CSS, and JavaScript.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
+              <span class="skill-level mono">Intermediate</span>
+            </div>
+            <div class="skill-card glass reveal tilt-card" style="--d:210ms">
+              <div class="skill-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3>Ethical Testing</h3>
+              <p>Practicing beginner-level security concepts in safe, controlled lab environments.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:45%"></div></div>
+              <span class="skill-level mono">Learning</span>
+            </div>
+            <div class="skill-card glass reveal tilt-card" style="--d:280ms">
+              <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Digital Marketing</h3>
+              <p>Brand strategy, content flow, and online presence building via CyberMak Media.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:50%"></div></div>
+              <span class="skill-level mono">Developing</span>
+            </div>
+            <div class="skill-card glass reveal tilt-card" style="--d:350ms">
+              <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+              <h3>Tech Exploration</h3>
+              <p>Exploring digital tools and real-world systems to understand how technology operates.</p>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+              <span class="skill-level mono">Active</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+      <section id="projects" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-num mono">04</span>
+            <h2><i class="fa-solid fa-code-branch"></i> Project Showcase</h2>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card glass reveal tilt-card" style="--d:0ms">
+              <div class="project-img-wrap">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80&auto=format&fit=crop" alt="Security learning lab" class="project-img" loading="lazy" />
+                <div class="project-img-overlay"></div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-tag mono"><i class="fa-solid fa-tag"></i> Security</span>
+                  <span class="project-num mono">01</span>
+                </div>
+                <h3>Security Learning Labs</h3>
+                <p>Practical learning through beginner-level ethical testing and security fundamentals. Exploring CTF challenges and TryHackMe rooms.</p>
+                <div class="project-footer">
+                  <span class="tag-pill"><i class="fa-solid fa-circle-dot fa-xs"></i> In Progress</span>
+                  <a href="https://tryhackme.com/p/fiercemuhammad" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card glass reveal tilt-card" style="--d:100ms">
+              <div class="project-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&auto=format&fit=crop" alt="Web development" class="project-img" loading="lazy" />
+                <div class="project-img-overlay"></div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-tag mono"><i class="fa-solid fa-tag"></i> Web Dev</span>
+                  <span class="project-num mono">02</span>
+                </div>
+                <h3>Web Practice Builds</h3>
+                <p>Frontend experiments to strengthen structure, design consistency, and clean UI implementation across different project types.</p>
+                <div class="project-footer">
+                  <span class="tag-pill"><i class="fa-solid fa-circle-dot fa-xs"></i> Ongoing</span>
+                  <a href="https://github.com/fierce-muhammad" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card glass reveal tilt-card" style="--d:200ms">
+              <div class="project-img-wrap">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80&auto=format&fit=crop" alt="Visual content design" class="project-img" loading="lazy" />
+                <div class="project-img-overlay"></div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-tag mono"><i class="fa-solid fa-tag"></i> Design</span>
+                  <span class="project-num mono">03</span>
+                </div>
+                <h3>Visual Content Concepts</h3>
+                <p>Practice projects in layout and design for digital content and branding. Building a visual portfolio under CyberMak Media.</p>
+                <div class="project-footer">
+                  <span class="tag-pill"><i class="fa-solid fa-circle-dot fa-xs"></i> Active</span>
+                  <a href="https://www.facebook.com/muhammad.bin.haseeb.2025/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ BRANDING ═══════════════════ -->
+      <section id="branding" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-num mono">05</span>
+            <h2><i class="fa-solid fa-satellite-dish"></i> Branding</h2>
+          </div>
+
+          <div class="branding-layout">
+            <div class="branding-panel glass reveal">
+              <div class="branding-bg-text" aria-hidden="true">CYBERMAK</div>
+              <div class="branding-content">
+                <span class="mono branding-label">// Social Media Marketing Venture</span>
+                <h3 class="branding-name">CyberMak Media</h3>
+                <p>Practical digital growth, streamlined posting workflows, and simple branding strategies for building online presence from the ground up.</p>
+                <div class="branding-pillars">
+                  <div class="pillar"><i class="fa-solid fa-layer-group"></i><span>Clean Content</span></div>
+                  <div class="pillar"><i class="fa-solid fa-rotate"></i><span>Consistent Flow</span></div>
+                  <div class="pillar"><i class="fa-solid fa-bullseye"></i><span>Audience Focus</span></div>
+                  <div class="pillar"><i class="fa-solid fa-bolt"></i><span>Lean Execution</span></div>
+                </div>
+                <a href="https://cybermakmedia.me" target="_blank" rel="noopener noreferrer" class="btn btn-ghost brand-btn">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>Visit CyberMak Media</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="branding-images reveal">
+              <div class="brand-img-card">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80&auto=format&fit=crop" alt="Social media marketing" loading="lazy" />
+                <div class="brand-img-tag mono">Social Media</div>
+              </div>
+              <div class="brand-img-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop" alt="Analytics and growth" loading="lazy" />
+                <div class="brand-img-tag mono">Growth</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════ CONTACT ═══════════════════ -->
+      <section id="contact" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-num mono">06</span>
+            <h2><i class="fa-solid fa-at"></i> Get In Touch</h2>
+          </div>
+
+          <div class="contact-layout">
+
+            <!-- Direct contact -->
+            <div class="contact-card glass reveal">
+              <h3><i class="fa-solid fa-inbox"></i> Direct Contact</h3>
+              <ul class="contact-list">
+                <li>
+                  <a href="mailto:muhammadbinhaseeb755@gmail.com">
+                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <span class="contact-text">
+                      <span class="contact-label mono">Personal</span>
+                      <span>muhammadbinhaseeb755@gmail.com</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square fa-xs contact-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:cybermakmedia@gmail.com">
+                    <span class="contact-icon"><i class="fa-solid fa-briefcase"></i></span>
+                    <span class="contact-text">
+                      <span class="contact-label mono">Business</span>
+                      <span>cybermakmedia@gmail.com</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square fa-xs contact-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+923358010723">
+                    <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                    <span class="contact-text">
+                      <span class="contact-label mono">Phone</span>
+                      <span>+92 335 8010723</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square fa-xs contact-arrow"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Social links — FIXED compact grid -->
+            <div class="contact-card glass reveal" style="--d:80ms">
+              <h3><i class="fa-solid fa-link"></i> Find Me Online</h3>
+              <div class="social-grid">
+                <a href="https://www.facebook.com/muhammad.bin.haseeb.2025/" target="_blank" rel="noopener noreferrer" class="social-tile" title="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://www.youtube.com/@MuhammadBinHaseeb755" target="_blank" rel="noopener noreferrer" class="social-tile" title="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                  <span>YouTube</span>
+                </a>
+                <a href="https://github.com/fierce-muhammad" target="_blank" rel="noopener noreferrer" class="social-tile" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/muhammadbinhaseeb/" target="_blank" rel="noopener noreferrer" class="social-tile" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://tryhackme.com/p/fiercemuhammad" target="_blank" rel="noopener noreferrer" class="social-tile thm" title="TryHackMe">
+                  <i class="fa-solid fa-terminal"></i>
+                  <span>TryHackMe</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="mono footer-copy">© 2025 Muhammad Bin Haseeb</span>
+        <span class="mono footer-tag">// Built with passion</span>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
